@@ -1,0 +1,154 @@
+{
+  "datas": [
+    {
+      "topic_id": 1,
+      "title": "在css选择器当中，优先级排序正确的是",
+      "anwser": [
+        {
+          "topic_id": 1,
+          "anwser_id": 1,
+          "anwser_describe": "A、id选择器>标签选择器>类选择器",
+          "is_anwser": 0
+        },
+        {
+          "topic_id": 1,
+          "anwser_id": 2,
+          "anwser_describe": "B、标签选择器>类选择器>id选择器",
+          "is_anwser": 0
+        },
+        {
+          "topic_id": 1,
+          "anwser_id": 3,
+          "anwser_describe": "C、类选择器>标签选择器>id选择器",
+          "is_anwser": 0
+        },
+        {
+          "topic_id": 1,
+          "anwser_id": 4,
+          "anwser_describe": "D、id选择器>类选择器>标签选择器",
+          "is_anwser": 1
+        }
+      ]
+    },
+    {
+      "topic_id": 2,
+      "title": "关于HTML语义化，以下哪个说法是正确的",
+      "anwser": [
+        {
+          "topic_id": 2,
+          "anwser_id": 1,
+          "anwser_describe": "A、语义化的HTML有利于机器的阅读，如PDA手持设备、搜索引擎爬虫；但不利于人的阅读",
+          "is_anwser": 0
+        },
+        {
+          "topic_id": 2,
+          "anwser_id": 2,
+          "anwser_describe": "B、Table 属于过时的标签，遇到数据列表时，需尽量使用 div 来模拟表格",
+          "is_anwser": 0
+        },
+        {
+          "topic_id": 2,
+          "anwser_id": 3,
+          "anwser_describe": "C、语义化是HTML5带来的新概念，此前版本的HTML无法做到语义化",
+          "is_anwser": 0
+        },
+        {
+          "topic_id": 2,
+          "anwser_id": 4,
+          "anwser_describe": "D、header、article、address都属于语义化明确的标签",
+          "is_anwser": 1
+        }
+      ]
+    },
+    {
+      "topic_id": 3,
+      "title": "CSS 样式，下面哪一个元素能够达到最大宽度，且前后各有一个换行？",
+      "anwser": [
+        {
+          "topic_id": 3,
+          "anwser_id": 1,
+          "anwser_describe": "A、Block Element",
+          "is_anwser": 1
+        },
+        {
+          "topic_id": 3,
+          "anwser_id": 2,
+          "anwser_describe": "B、Square Element",
+          "is_anwser": 0
+        },
+        {
+          "topic_id": 3,
+          "anwser_id": 3,
+          "anwser_describe": "C、Side Element",
+          "is_anwser": 0
+        },
+        {
+          "topic_id": 3,
+          "anwser_id": 4,
+          "anwser_describe": "D、Box Element",
+          "is_anwser": 0
+        }
+      ]
+    },
+    {
+      "topic_id": 4,
+      "title": "放在HTML里的哪一部分JavaScripts会在页面加载的时候被执行？",
+      "anwser": [
+        {
+          "topic_id": 4,
+          "anwser_id": 1,
+          "anwser_describe": "A、文件头部位置",
+          "is_anwser": 0
+        },
+        {
+          "topic_id": 4,
+          "anwser_id": 2,
+          "anwser_describe": "B、文件尾",
+          "is_anwser": 0
+        },
+        {
+          "topic_id": 4,
+          "anwser_id": 3,
+          "anwser_describe": "C、<head>标签部分",
+          "is_anwser": 0
+        },
+        {
+          "topic_id": 4,
+          "anwser_id": 4,
+          "anwser_describe": "D、<body>标签部分",
+          "is_anwser": 1
+        }
+      ]
+    },
+    {
+      "topic_id": 5,
+      "title": "css中哪个些属性不可以继承",
+      "anwser": [
+        {
+          "topic_id": 5,
+          "anwser_id": 1,
+          "anwser_describe": "A、font-size",
+          "is_anwser": 0
+        },
+        {
+          "topic_id": 5,
+          "anwser_id": 2,
+          "anwser_describe": "B、color",
+          "is_anwser": 0
+        },
+        {
+          "topic_id": 5,
+          "anwser_id": 3,
+          "anwser_describe": "C、font-family",
+          "is_anwser": 0
+        },
+        {
+          "topic_id": 5,
+          "anwser_id": 4,
+          "anwser_describe": "D、border",
+          "is_anwser": 1
+        }
+      ]
+    }
+  ]
+}
