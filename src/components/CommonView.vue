@@ -12,7 +12,7 @@
     <div class="item-bg commom-bg">
       <p>{{ questions[currentQuestion - 1].title }}</p>
       <ul>
-        <li :class="cueAnwserIndex === index ? 'active' : ''" v-for="(item, index) in questions[currentQuestion - 1].anwser" :key="item.anwser_id" @click="chooseAnwser(index)">
+        <li :class="curAnwserIndex === index ? 'active' : ''" v-for="(item, index) in questions[currentQuestion - 1].anwser" :key="item.anwser_id" @click="chooseAnwser(index)">
           <span>{{ item.anwser_describe }}</span>
         </li>
       </ul>
@@ -20,6 +20,7 @@
     <span class="item-btn common-btn" @click="nextAnwser" v-if="currentQuestion < questions.length"></span>
     <span class="submit-btn common-btn" @click="commitAnwser" v-else></span>
   </div>
+  <toast :message="toastMessage" :if-show="showToast" @initIfShow="changeIfShow"></toast>
 </div>
 </template>
 
@@ -31,25 +32,30 @@ import {
   SCORE_INCREMENT,
   UPDATE_CURRENT_ANWSER
 } from '../store/mutations-type'
+import Toast from '../components/Toast'
 export default {
   data() {
     return {
-      cueAnwserIndex: "",
+      curAnwserIndex: "",
+      showToast: false,
+      toastMessage: ''
     };
   },
   props: ["fatherComponent"],
   computed: mapState(["currentQuestion", "questions"]),
   methods: {
     chooseAnwser(index) {
-      this.cueAnwserIndex = index;
+      this.curAnwserIndex = index;
     },
     nextAnwser() {
-      if (this.cueAnwserIndex === "") {
-        alert("请选择答案！");
+      if (this.curAnwserIndex === "") {
+        console.log(111111111)
+        this.showToast = true;
+        this.toastMessage = 'Toast'
       } else {
         // 判断当前选择的是否是正确答案
         let isAnwser = this.questions[this.currentQuestion - 1].anwser[
-          this.cueAnwserIndex
+          this.curAnwserIndex
         ].is_anwser;
         if (isAnwser) {
           // 如果是正确答案，分数加20
@@ -57,14 +63,20 @@ export default {
         }
         // 进入下一题
         this.$store.commit(UPDATE_CURRENT_ANWSER)
-        // 初始化cueAnwserIndex
-        this.cueAnwserIndex = ''
+        // 初始化curAnwserIndex
+        this.curAnwserIndex = ''
       }
     },
     commitAnwser() {
       this.$router.push('score')
+    },
+    changeIfShow() {
+      this.showToast = false
     }
   },
+  components: {
+    Toast
+  }
 };
 </script>
 
@@ -84,7 +96,7 @@ export default {
   position: absolute;
   bottom: 1rem;
   font-size: 0.75rem;
-  left: 0.9rem;
+  left: 1rem;
   color: #a57c50;
   font-weight: bolder;
 }

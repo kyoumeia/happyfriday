@@ -12,5 +12,5 @@ export default {
 </script>
 
 <style>
-@import './assets/style/common.less'
+@import './assets/style/common.less';
 </style>
