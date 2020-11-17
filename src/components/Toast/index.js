@@ -1,32 +1,28 @@
-let _TOAST = {
-  show: false,
-  component: null
-}
-export default {
-  install(Vue) {
-    Vue.prototype.$toast = function (message, options) {
-      let ToastComponent = Vue.extend({
-        data() {
-          return {
-            show: _TOAST.show,
-            message,
-          }
-        },
-        template: '<div v-if="show">{{message}}</div>'
-      })
-      if (_TOAST.show) {
-        return;
-      }
-      if (!_TOAST.component) {
-        _TOAST.component = new ToastComponent()
-        let toastElement = _TOAST.component.$mount().$el
-        document.body.appendChild(toastElement)
-      }
-      _TOAST.component.show = _TOAST.show = true
-      _TOAST.component.message = message
-      setTimeout(() => {
-        _TOAST.component.show = _TOAST.show = false
-      }, 1500);
+import ToastComponent from './Toast.vue'
+
+const Toast = {}
+let isShow = false
+let toastVueObj
+
+Toast.install = function (Vue) {
+  const ToastConstructor = Vue.extend(ToastComponent)
+  Vue.prototype.$toast = function (message, options) {
+    if (isShow) {
+      return;
     }
+    isShow = true
+    toastVueObj = new ToastConstructor({
+      data: {
+        message,
+        isShow
+      }
+    })
+    let toastNode = toastVueObj.$mount().$el
+    document.body.appendChild(toastNode)
+    setTimeout(() => {
+      toastVueObj.isShow = isShow = false
+    }, 1500);
   }
 }
+
+export default Toast

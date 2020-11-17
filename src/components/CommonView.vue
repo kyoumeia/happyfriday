@@ -20,7 +20,6 @@
     <span class="item-btn common-btn" @click="nextAnwser" v-if="currentQuestion < questions.length"></span>
     <span class="submit-btn common-btn" @click="commitAnwser" v-else></span>
   </div>
-  <toast :message="toastMessage" :if-show="showToast" @initIfShow="changeIfShow"></toast>
 </div>
 </template>
 
@@ -32,7 +31,6 @@ import {
   SCORE_INCREMENT,
   UPDATE_CURRENT_ANWSER
 } from '../store/mutations-type'
-import Toast from '../components/Toast'
 export default {
   data() {
     return {
@@ -49,9 +47,7 @@ export default {
     },
     nextAnwser() {
       if (this.curAnwserIndex === "") {
-        console.log(111111111)
-        this.showToast = true;
-        this.toastMessage = 'Toast'
+        this.$toast('请选择答案！')
       } else {
         // 判断当前选择的是否是正确答案
         let isAnwser = this.questions[this.currentQuestion - 1].anwser[
@@ -73,9 +69,6 @@ export default {
     changeIfShow() {
       this.showToast = false
     }
-  },
-  components: {
-    Toast
   }
 };
 </script>

@@ -36,7 +36,7 @@ export default {
       this.scoreTips = this.scoreTipsArr[index]
     },
     showToast() {
-      this.$toast('自定义Toast', {})
+      this.$toast('感谢您的分享！', {})
     }
   },
 }
